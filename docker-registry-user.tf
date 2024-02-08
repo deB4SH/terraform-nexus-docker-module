@@ -11,10 +11,10 @@ resource "random_password" "push-user-password" {
 }
 
 resource "nexus_security_user" "pull-user" {
-  userid     = "${var.name}-pull"
-  firstname  = "Pull"
+  userid     = "docker-${var.name}-pull"
+  firstname  = "Docker Pull"
   lastname   = "${var.name}"
-  email      = "svc.${var.name}-pull@svc.0x09.de"
+  email      = "svc.docker.${var.name}-pull@local.lan"
   password   = random_password.pull-user-password.result
   roles      = ["docker-${var.name}-pull-role"]
   status     = "active"
@@ -22,10 +22,10 @@ resource "nexus_security_user" "pull-user" {
 }
 
 resource "nexus_security_user" "push-user" {
-  userid     = "${var.name}-push"
-  firstname  = "Push"
+  userid     = "docker-${var.name}-push"
+  firstname  = "Docker Push"
   lastname   = "${var.name}"
-  email      = "svc.${var.name}-push@svc.0x09.de"
+  email      = "svc.docker.${var.name}-push@local.lan"
   password   = random_password.push-user-password.result
   roles      = ["docker-${var.name}-push-role"]
   status     = "active"
