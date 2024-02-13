@@ -11,7 +11,7 @@ resource "nexus_security_role" "security-role-pull" {
 
 resource "nexus_security_role" "security-role-push" {
   description = "Docker Pull Role for ${var.name}"
-  name        = "docker-${var.name}-pull-role"
+  name        = "docker-${var.name}-push-role"
   privileges = [
     "nx-repository-view-docker-${var.name}-read",
     "nx-repository-view-docker-${var.name}-browse",
