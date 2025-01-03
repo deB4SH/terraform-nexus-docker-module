@@ -5,7 +5,7 @@ resource "nexus_repository_docker_hosted" "registry" {
   docker {
     force_basic_auth = false
     v1_enabled       = false
-    http_port        = "${var.port}"
+    https_port        = "${var.port}"
   }
 
   storage {
